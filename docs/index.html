@@ -2,15 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/task-front/assets/icons8-lista-50-DI0bcG1E.png"
-    />
+    <link rel="icon" type="image/png" href="/task-front/assets/img/icons8-lista-50.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Consulta</title>
-    <script type="module" crossorigin src="/task-front/assets/index-DhqL1m-2.js"></script>
-    <link rel="stylesheet" crossorigin href="/task-front/assets/index-DJgYMmaP.css">
+    <script type="module" crossorigin src="/task-front/assets/index-DLxvZuLM.js"></script>
+    <link rel="stylesheet" crossorigin href="/task-front/assets/index-BVqr3bZt.css">
   </head>
   <body>
     <div id="container">
@@ -20,9 +16,20 @@
         <input type="text" id="titulo" name="titulo" required />
         <label for="completada">Completada</label>
         <input type="checkbox" id="completada" name="completada" />
-        <button type="submit">Enviar</button>
+        <button type="submit" id="enviar">Enviar</button>
       </form>
     </div>
-    <div id="mostrar"></div>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Completada</th>
+          </tr>
+        </thead>
+        <tbody id="mostrar"></tbody>
+      </table>
+    </div>
   </body>
 </html>

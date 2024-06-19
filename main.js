@@ -44,12 +44,22 @@ const cargarTarea = async () => {
 };
 
 const renderTarea = (tareas) => {
-  const lista = document.createElement("ol");
   tareas.forEach((tarea) => {
-    const item = document.createElement("li");
-    item.textContent = `ID: ${tarea.id}, Título: ${tarea.titulo}, Completada: ${tarea.completada}`;
-    lista.appendChild(item);
-    console.log(lista.appendChild(item));
+    const fila = document.createElement("tr");
+    const idColum = document.createElement("td");
+
+    idColum.textContent = tarea.id;
+    fila.appendChild(idColum);
+
+    const tituColum = document.createElement("td");
+
+    tituColum.textContent = tarea.titulo;
+    fila.appendChild(tituColum);
+
+    const compleColum = document.createElement("td");
+
+    compleColum.textContent = tarea.completada;
+    fila.appendChild(compleColum);
+    imprimir.appendChild(fila);
   });
-  imprimir.appendChild(lista);
 };
