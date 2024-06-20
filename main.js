@@ -60,6 +60,27 @@ const renderTarea = (tareas) => {
 
     compleColum.textContent = tarea.completada;
     fila.appendChild(compleColum);
+
+    const elimColum = document.createElement("td");
+    const elimBoton = document.createElement("button");
+    elimBoton.textContent = "Eliminar";
+    elimBoton.addEventListener("click", () => eliminarDato(tarea.id));
+    elimColum.appendChild(elimBoton);
+    fila.appendChild(elimColum);
+
     imprimir.appendChild(fila);
   });
+};
+
+const eliminarDato = async (id) => {
+  try {
+    const response = await fetch(`http://localhost:3000/tareas/${id}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      cargarTarea();
+    }
+  } catch (error) {
+    console.error(`Error al eliminar la tarea con ID ${id}, ${error}`);
+  }
 };
