@@ -63,7 +63,11 @@ const renderTarea = (tareas) => {
 
     const elimColum = document.createElement("td");
     const elimBoton = document.createElement("button");
-    elimBoton.textContent = "Eliminar";
+    elimBoton.classList.add("btn-icon");
+    const iconoElim = document.createElement("img");
+    iconoElim.src = "public/assets/img/icons8-eliminar-25.png";
+    elimBoton.appendChild(iconoElim);
+
     elimBoton.addEventListener("click", () => eliminarDato(tarea.id));
     elimColum.appendChild(elimBoton);
     fila.appendChild(elimColum);

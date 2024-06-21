@@ -38,9 +38,10 @@ td {
 }
 tr:hover {
   background: rgba(190, 171, 171, 0.13);
-  cursor: pointer;
 }
-
+tbody {
+  text-align: center;
+}
 #enviar {
   border: 2px solid;
   border-radius: 6px;
@@ -48,4 +49,19 @@ tr:hover {
   color: white;
   padding: 5px;
   width: 4rem;
+}
+.btn-icon {
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.btn-icon:hover {
+  transform: scale(1.1);
+  background-color: rgba(216, 1, 1, 0.884);
+}
+.btn-icon img {
+  width: 30px;
+  height: auto;
 }
