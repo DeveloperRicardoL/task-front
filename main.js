@@ -1,6 +1,7 @@
 import "./style.css";
 
 const form = document.getElementById("tareaForm");
+const imprimir = document.getElementById("mostrar");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -13,6 +14,10 @@ form.addEventListener("submit", async (event) => {
     titulo: titulo,
     completada: completada,
   };
+  mostrarTareas(tarea);
+});
+
+const mostrarTareas = async (tarea) => {
   try {
     const response = await fetch("http://localhost:3000/tareas", {
       method: "POST",
@@ -24,11 +29,9 @@ form.addEventListener("submit", async (event) => {
       cargarTarea();
     }
   } catch (error) {
-    console.log("ERROR!!!");
+    console.error(`Error!!!:  ${error}`);
   }
-});
-
-const imprimir = document.getElementById("mostrar");
+};
 
 const cargarTarea = async () => {
   try {
@@ -45,6 +48,7 @@ const cargarTarea = async () => {
 
 const renderTarea = (tareas) => {
   tareas.forEach((tarea) => {
+    // ses crean filas "tr" y columnas "td" de forma dinamica
     const fila = document.createElement("tr");
     const idColum = document.createElement("td");
 
@@ -63,9 +67,12 @@ const renderTarea = (tareas) => {
 
     const elimColum = document.createElement("td");
     const elimBoton = document.createElement("button");
+
     elimBoton.classList.add("btn-icon");
+
     const iconoElim = document.createElement("img");
-    iconoElim.src = "public/assets/img/icons8-eliminar-25.png";
+
+    iconoElim.src = "./assets/img/icons8-eliminar-25.png";
     elimBoton.appendChild(iconoElim);
 
     elimBoton.addEventListener("click", () => eliminarDato(tarea.id));
