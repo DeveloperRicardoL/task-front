@@ -5,13 +5,14 @@
     <link rel="icon" type="image/png" href="/task-front/assets/img/icons8-lista-50.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Consulta</title>
-    <script type="module" crossorigin src="/task-front/assets/index-Bvap76RA.js"></script>
+    <script type="module" crossorigin src="/task-front/assets/index-COrzMOkO.js"></script>
     <link rel="stylesheet" crossorigin href="/task-front/assets/index-D-ZagNkm.css">
   </head>
   <body>
     <div id="container">
       <h1>Lista de una Base de Datos Propia</h1>
       <form id="tareaForm">
+        <input type="text" id="tareaId" name="tareaId" hidden />
         <label for="titulo">Titulo de tareas</label>
         <input type="text" id="titulo" name="titulo" required />
         <label for="completada">Completada</label>
@@ -27,6 +28,7 @@
             <th>Título</th>
             <th>Completada</th>
             <th>Eliminar</th>
+            <th>Modificar</th>
           </tr>
         </thead>
         <tbody id="mostrar"></tbody>

@@ -10,6 +10,7 @@
     <div id="container">
       <h1>Lista de una Base de Datos Propia</h1>
       <form id="tareaForm">
+        <input type="text" id="tareaId" name="tareaId" hidden />
         <label for="titulo">Titulo de tareas</label>
         <input type="text" id="titulo" name="titulo" required />
         <label for="completada">Completada</label>
@@ -25,6 +26,7 @@
             <th>Título</th>
             <th>Completada</th>
             <th>Eliminar</th>
+            <th>Modificar</th>
           </tr>
         </thead>
         <tbody id="mostrar"></tbody>
