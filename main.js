@@ -73,7 +73,7 @@ const renderTarea = (tareas) => {
     fila.appendChild(tituColum);
 
     const compleColum = document.createElement("td");
-    compleColum.textContent = tarea.completada; //?"si":"no";
+    compleColum.textContent = tarea.completada;
     fila.appendChild(compleColum);
 
     const elimColum = document.createElement("td");
@@ -95,6 +95,7 @@ const renderTarea = (tareas) => {
     const iconModif = document.createElement("img");
     iconModif.src = "./assets/img/icons8-editar-archivo-de-texto-25.png";
     modifBoton.appendChild(iconModif);
+
     modifBoton.addEventListener("click", () => setDatos(tarea));
     modifColum.appendChild(modifBoton);
     fila.appendChild(modifColum);
@@ -140,5 +141,6 @@ const modificarDato = async (tarea) => {
 const setDatos = async (tarea) => {
   document.getElementById("tareaId").value = tarea.id;
   document.getElementById("titulo").value = tarea.titulo;
-  document.getElementById("completada").value = tarea.completada;
+  document.getElementById("completada").checked = tarea.completada;
 };
+// await cargarTarea();
